@@ -33,6 +33,41 @@ Compose compiler plugin (`org.jetbrains.kotlin.plugin.compose`) is.
 ./gradlew test            # run unit tests
 ```
 
+Every push and pull request is built on GitHub Actions (`.github/workflows/android.yml`); the debug
+APK is attached to each run under **Artifacts**.
+
+## Releases
+
+Pushing a tag `v<versionName>` (for example `v0.1.0`) runs `.github/workflows/release.yml`, which
+builds a signed APK (to install directly) and AAB (for Google Play) and publishes them as a GitHub
+Release. Before tagging, set `versionName` to match the tag and raise `versionCode`.
+
+```sh
+git tag v0.1.0 && git push origin v0.1.0
+```
+
+### One-time signing setup
+
+Create the key **on your own machine** and keep the `.jks` file and passwords backed up somewhere
+safe: every update of the app must be signed with the same key, and a lost key cannot be replaced.
+
+```sh
+keytool -genkeypair -v -keystore release.jks -storetype PKCS12 \
+  -alias release -keyalg RSA -keysize 4096 -validity 10000
+base64 -w0 release.jks > release.jks.b64   # macOS: base64 -i release.jks -o release.jks.b64
+```
+
+Add these under **Settings → Secrets and variables → Actions → New repository secret**:
+
+| Secret | Value |
+|---|---|
+| `ANDROID_KEYSTORE_BASE64` | contents of `release.jks.b64` |
+| `ANDROID_KEYSTORE_PASSWORD` | keystore password |
+| `ANDROID_KEY_ALIAS` | `release` (the `-alias` above) |
+| `ANDROID_KEY_PASSWORD` | key password (with PKCS12, the same as the keystore password) |
+
+Then delete `release.jks.b64`. Never commit the keystore (`*.jks` is git-ignored).
+
 ## Working with BMad
 
 [BMad Method](https://github.com/bmad-code-org/BMAD-METHOD) v6.12.4 is installed for Claude Code:
