@@ -15,7 +15,7 @@ worked out with [BMad](#working-with-bmad).
 | UI | Jetpack Compose (BOM 2026.09.00) + Material 3 |
 | Build | Android Gradle Plugin 9.4.0, Gradle 9.6.0 (wrapper), Gradle Kotlin DSL + version catalog |
 | JDK | 17 |
-| SDK | `minSdk` 26, `compileSdk` / `targetSdk` 36 |
+| SDK | `minSdk` 26, `compileSdk` 37.2, `targetSdk` 36 |
 
 AGP 9 has built-in Kotlin, so the `org.jetbrains.kotlin.android` plugin is intentionally not applied. Only the
 Compose compiler plugin (`org.jetbrains.kotlin.plugin.compose`) is.
@@ -24,7 +24,7 @@ Compose compiler plugin (`org.jetbrains.kotlin.plugin.compose`) is.
 
 - JDK 17
 - Android Studio, recent enough to support AGP 9.4.0
-- Android SDK Platform 36 and Build Tools 36.0.0 (install via the SDK Manager)
+- Android SDK Platform 37.2 and Build Tools 36.0.0 (install via the SDK Manager)
 
 ## Build
 

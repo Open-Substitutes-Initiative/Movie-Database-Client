@@ -6,7 +6,12 @@ plugins {
 android {
     // TODO: pick the permanent application ID before the first release; it cannot change afterwards.
     namespace = "org.opensubstitutes.moviedatabaseclient"
-    compileSdk = 36
+    // AndroidX core 1.19 / Compose 1.12 require compiling against API 37 or later.
+    compileSdk {
+        version = release(37) {
+            minorApiLevel = 2
+        }
+    }
 
     defaultConfig {
         applicationId = "org.opensubstitutes.moviedatabaseclient"
