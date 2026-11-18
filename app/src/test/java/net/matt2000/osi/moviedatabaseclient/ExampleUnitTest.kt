@@ -1,4 +1,4 @@
-package org.opensubstitutes.moviedatabaseclient
+package net.matt2000.osi.moviedatabaseclient
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
