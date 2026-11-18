@@ -1,4 +1,4 @@
-package org.opensubstitutes.moviedatabaseclient
+package net.matt2000.osi.moviedatabaseclient
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -14,7 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import org.opensubstitutes.moviedatabaseclient.ui.theme.MovieDatabaseClientTheme
+import net.matt2000.osi.moviedatabaseclient.ui.theme.MovieDatabaseClientTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

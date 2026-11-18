@@ -86,7 +86,7 @@ Open the repository in Claude Code and invoke the `bmad-help` skill to find out 
 
 ## Before the first release
 
-- [ ] Choose the permanent application ID (currently `org.opensubstitutes.moviedatabaseclient`); it cannot change after publishing
+- [x] Permanent application ID: `net.matt2000.osi.moviedatabaseclient` (cannot change after publishing)
 - [ ] Add a launcher icon
 - [ ] Choose a license
 - [ ] Choose the movie data source and decide how API keys are kept out of version control

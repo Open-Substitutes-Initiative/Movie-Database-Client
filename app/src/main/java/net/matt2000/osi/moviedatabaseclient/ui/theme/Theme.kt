@@ -1,4 +1,4 @@
-package org.opensubstitutes.moviedatabaseclient.ui.theme
+package net.matt2000.osi.moviedatabaseclient.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
